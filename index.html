@@ -1,0 +1,89 @@
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to FoodDelivery!</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css.css">
+</head>
+
+
+<body>
+<form action="index.html" method="post">
+<h1>Welcome to FoodDelivery!</h1>
+
+
+<fieldset>
+<label>Please use the following form to register to our website
+ and use our services!</label>
+</fieldset>
+
+
+
+<fieldset>
+	<legend><span class="number">1</span>Username</legend>
+	<label for="username">Please enter you username:</label>
+	<input type="text" id="username" name="username" maxlength="12"  placeholder="Username up to 12 characters" required>
+</fieldset>
+
+<fieldset>
+	<legend><span class="number">2</span>Email</legend>
+	<label for="email">Please enter you email:</label>
+	<input type="email" id="email" name="email" placeholder="Email" required>   
+</fieldset>
+
+<fieldset>
+	<legend><span class="number">3</span>Mobile Phone:</legend>
+	<label for="mobile">Please enter you mobile phone number:</label>
+	<input type="number" id="mobile" name="mobile" placeholder="Enter your phone number">      
+</fieldset>
+
+<fieldset>
+	<legend><span class="number">4</span>Password</legend>
+	<label for="password">Please enter you password:</label>
+	<input type="password" id="password" name="password" placeholder="Password up to 10 characters" maxlength="10" required>
+</fieldset>
+
+
+<fieldset>
+<legend><span class="number">5</span>Preferences</legend>     
+<label>Please choose your preffered type of food:<br>
+<label>This will help us with suggesting suitable ads for you</label>
+<input type="checkbox" name="preference" value="vegan"> Vegan
+<br>
+  <input type="checkbox" name="preference" value="vegetarian"> Vegetarian
+<br>
+  <input type="checkbox" name="preference" value="keto"> Keto
+<br>
+  <input type="checkbox" name="preference" value="lowcarb"> Low Carb
+<br>
+  <input type="checkbox" name="preference" value="all"> No Preference
+  <br>
+  <br> 
+</fieldset>
+
+
+<fieldset>
+<legend><span class="number">6</span>City</legend>
+<label>Please select your city:</label><br>
+<select name="city" id="address">
+  <option value="cairo"> Cairo
+  <option value="sahel"> Sahel
+  <option value="alexandria"> Alexandria
+  <option value="aswan"> Aswan
+</select>
+<br>
+</fieldset>
+
+<fieldset>
+<legend><span class="number">7</span>Username</legend>
+<label for="address">Please enter you address:</label>
+<input type="text" id="address" name="address" placeholder="Address" required>
+</fieldset>
+
+<button type="submit">Submit</button>
+
+
+</form>
+</body>
+</html>
