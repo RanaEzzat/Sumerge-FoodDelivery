@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    	<title>Pizza Form</title>
+ 	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FoodDelivery Cart</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css.css">
+</head>
+
+<body style="background-color:#F6CACB;">
+
+<ul>
+  <li><a href="register.html">Register</a></li>
+  <li><a href="cart.html">Cart</a></li>
+</ul>
+
+<img src="Sizes.png" alt="Pizza Sizes">
+<form action="" id="cart" onsubmit="return false;">
+   <fieldset>
+   
+	<legend><span class="number">1</span>Please select the pizza size:</legend>
+   
+    <input type="radio"  name="pizzasize" value="Small" />
+    Small Size - 500 calories - 50 EGP<br/>
+
+
+    <input type="radio"  name="pizzasize" value="Medium" />
+    Medium Size - 1000 calories - 80 EGP<br/>
+
+
+    <input type="radio"  name="pizzasize" value="Large"/>
+    Large Size - 1500 calories - 100 EGP<br/>
+
+
+    <input type="radio"  name="pizzasize" value="ExtraLarge" />
+    Extra Large Size - 2000 calories - 150 EGP<br/>
+ 
+
+<br/>
+<legend><span class="number">2</span>Please select your preffered sauce:</legend>
+   
+    <select id="sauces" name='sauces'>
+    <option value="None">Select sauces</option>
+    <option value="Ranch">Ranch - 15 EGP</option>
+    <option value="Buffalo">Buffalo - 10 EGP</option>
+    <option value="Garlic">Garlic - 15 EGP</option>
+    <option value="Pesto">Pesto - 10 EGP</option>
+   </select>
+    <br/>
+ <br>
+
+<input type="submit" value="Calculate Total" onClick="getTotal()">
+
+
+<input id="totalPrice" type="text" name="totalprice" readonly="readonly">
+    </fieldset>
+</form>
+
+
+
+<script type="text/javascript">
+
+var cartinfo= document.forms["cart"];
+
+var pizzacosts = new Array();
+pizzacosts["Small"]=50;
+pizzacosts["Medium"]=80;
+pizzacosts["Large"]=100;
+pizzacosts["ExtraLarge"]=150;
+
+
+function pizzaPriceCalculate()
+{
+    var pizzasizeradios = document.getElementsByName('pizzasize');
+    var pizzapricesize=0;
+    for(var i = 0; i < pizzasizeradios.length; i++)
+    {
+        
+        if(pizzasizeradios[i].checked)
+        {
+            console.log("Okay");
+            pizzapricesize = pizzacosts[pizzasizeradios[i].value];
+            break;
+        }
+    }
+   
+    console.log("Size");
+    return pizzapricesize;
+}
+
+var saucesprices= new Array();
+saucesprices["None"]=0;
+saucesprices["Ranch"]=15;
+saucesprices["Buffalo"]=10;
+saucesprices["Garlic"]=15;
+saucesprices["Pesto"]=10;
+
+function saucePriceCalculate()
+{
+    var saucePrice=0;    
+    var cartinfo = document.forms["cart"];
+    var chosenSauce = cartinfo.elements["sauces"];
+    saucePrice = saucesprices[chosenSauce.value];
+    return saucePrice;
+}
+
+function getTotal()
+{
+    var totalPrice = pizzaPriceCalculate() + saucePriceCalculate();
+    alert("Total Price For the Pizza: $"+totalPrice);
+    document.getElementById('totalPrice').value = "Total Price = " + totalPrice;
+}
+
+</script>
+</body>
+</html>
+
