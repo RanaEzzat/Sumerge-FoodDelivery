@@ -48,3 +48,5 @@ function getTotal()
     alert("Total Price For the Pizza: $"+totalPrice);
     document.getElementById('totalPrice').value = "Total Price = " + totalPrice;
 }
+
+
