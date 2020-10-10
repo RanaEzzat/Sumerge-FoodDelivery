@@ -5,16 +5,25 @@
  	<meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FoodDelivery Cart</title>
-        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css.css">
+       <link rel="stylesheet" href="css/bootstrap.min.css">
+       <script src="java.js"></script>
 </head>
 
 <body style="background-color:#F6CACB;">
 
-<ul>
-  <li><a href="register.html">Register</a></li>
-  <li><a href="cart.html">Cart</a></li>
-</ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">FoodDel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="register.html">Register <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="cart.html">Order</a>
+          </div>
+        </div>
+      </nav>
+
 
 <img src="Sizes.png" alt="Pizza Sizes">
 <form action="" id="cart" onsubmit="return false;">
@@ -50,8 +59,9 @@
    </select>
     <br/>
  <br>
+<button type="button" onClick="getTotal()" class="btn btn-primary btn-lg">Calculate Total</button>
 
-<input type="submit" value="Calculate Total" onClick="getTotal()">
+<!--<input type="submit" value="Calculate Total" onClick="getTotal()">-->
 
 
 <input id="totalPrice" type="text" name="totalprice" readonly="readonly">
@@ -60,60 +70,6 @@
 
 
 
-<script type="text/javascript">
-
-var cartinfo= document.forms["cart"];
-
-var pizzacosts = new Array();
-pizzacosts["Small"]=50;
-pizzacosts["Medium"]=80;
-pizzacosts["Large"]=100;
-pizzacosts["ExtraLarge"]=150;
-
-
-function pizzaPriceCalculate()
-{
-    var pizzasizeradios = document.getElementsByName('pizzasize');
-    var pizzapricesize=0;
-    for(var i = 0; i < pizzasizeradios.length; i++)
-    {
-        
-        if(pizzasizeradios[i].checked)
-        {
-            console.log("Okay");
-            pizzapricesize = pizzacosts[pizzasizeradios[i].value];
-            break;
-        }
-    }
-   
-    console.log("Size");
-    return pizzapricesize;
-}
-
-var saucesprices= new Array();
-saucesprices["None"]=0;
-saucesprices["Ranch"]=15;
-saucesprices["Buffalo"]=10;
-saucesprices["Garlic"]=15;
-saucesprices["Pesto"]=10;
-
-function saucePriceCalculate()
-{
-    var saucePrice=0;    
-    var cartinfo = document.forms["cart"];
-    var chosenSauce = cartinfo.elements["sauces"];
-    saucePrice = saucesprices[chosenSauce.value];
-    return saucePrice;
-}
-
-function getTotal()
-{
-    var totalPrice = pizzaPriceCalculate() + saucePriceCalculate();
-    alert("Total Price For the Pizza: $"+totalPrice);
-    document.getElementById('totalPrice').value = "Total Price = " + totalPrice;
-}
-
-</script>
 </body>
 </html>
 
