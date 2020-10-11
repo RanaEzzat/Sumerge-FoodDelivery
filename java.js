@@ -16,13 +16,11 @@ function pizzaPriceCalculate()
         
         if(pizzasizeradios[i].checked)
         {
-            console.log("Okay");
             pizzapricesize = pizzacosts[pizzasizeradios[i].value];
             break;
         }
     }
    
-    console.log("Size");
     return pizzapricesize;
 }
 
@@ -45,8 +43,12 @@ function saucePriceCalculate()
 function getTotal()
 {
     var totalPrice = pizzaPriceCalculate() + saucePriceCalculate();
-    alert("Total Price For the Pizza: $"+totalPrice);
-    document.getElementById('totalPrice').value = "Total Price = " + totalPrice;
+    var card = document.getElementById("hiddendiv"); 
+    card.style.display="block";
+    var card2 = document.getElementById("hiddendiv2"); 
+    card2.style.display="block";
+    alert("Total Price For the Pizza: "+totalPrice+ " EGP! Scroll down for details!");
+    document.getElementById('hiddendiv2').innerHTML = "Your total is "+totalPrice + " EGP";
 }
 
 

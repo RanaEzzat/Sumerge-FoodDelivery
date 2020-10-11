@@ -7,12 +7,23 @@
         <title>FoodDelivery Cart</title>
        <link rel="stylesheet" href="css/bootstrap.min.css">
        <script src="java.js"></script>
+
+       <style>
+          body {
+            background-image: url('images/purple.png');
+            background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: 100% 100%;
+          }
+          </style>
+
+
 </head>
 
 <body style="background-color:#F6CACB;">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">FoodDel</a>
+    <a class="navbar-brand" href="index.html">FoodDel</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,7 +44,7 @@
         <a class="nav-link disabled" href="#">Favorites <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bookmark-star-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4zm4.16 4.1a.178.178 0 0 0-.32 0l-.634 1.285a.178.178 0 0 1-.134.098l-1.42.206a.178.178 0 0 0-.098.303L6.58 6.993c.042.041.061.1.051.158L6.39 8.565a.178.178 0 0 0 .258.187l1.27-.668a.178.178 0 0 1 .165 0l1.27.668a.178.178 0 0 0 .257-.187L9.368 7.15a.178.178 0 0 1 .05-.158l1.028-1.001a.178.178 0 0 0-.098-.303l-1.42-.206a.178.178 0 0 1-.134-.098L8.16 4.1z"/>
         </svg></a>
-        <a class="nav-link"  href="index.html">Contact Us <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <a class="nav-link disabled"  href="#">Contact Us <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
           <path fill-rule="evenodd" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
         </svg></a>
@@ -41,48 +52,132 @@
     </div>
   </nav>
 
-<img src="Sizes.png" alt="Pizza Sizes">
-<form action="" id="cart" onsubmit="return false;">
-   <fieldset>
+ 
+
+  <div class="d-flex justify-content-center align-items-center login-container" style="background-color:rgb(34, 33, 34); color:rgb(178, 163, 241); margin-left:150px; margin-right:150px; opacity:90%;">
+      
+    <form class="login-form text-center" id="cart" onsubmit="return false;" action="">
+          <br>
+          <div class="form-group" style="background-color:rgb(34, 33, 34); color:rgb(178, 163, 241); width:50%; margin-left:350px; opacity:50%">  
+        <h4 class="mb-5 font-weight-light" style="margin-left:-80px;">Please select your pizza size:</h4>
+        </div>  
+          <img src="images/pizzabox.png" width=25% height=25%>
    
-	<legend><span class="number">1</span>Please select the pizza size:</legend>
-   
-    <input type="radio"  name="pizzasize" value="Small" />
-    Small Size - 500 calories - 50 EGP<br/>
+    <div  class="forgot-link form-group d-flex justify-content-between align-items-center">
+        <section>
+            <div>
+              <input type="radio" id="control_01" name="pizzasize" value="Small" checked>
+              <label for="control_01">
+                <h2>Small</h2>
+                <p>The pizza contains around 500 calories and costs 50 EGP.</p>
+              </label>
+            </div>
+            
+            <div>
+              <input type="radio" id="control_02" name="pizzasize" value="Medium">
+              <label for="control_02">
+                <h2>Medium</h2>
+                <p>The pizza contains around 1000 calories and costs 80 EGP.</p>
+              </label>
+            </div>
+            
+            <div>
+              <input type="radio" id="control_03" name="pizzasize" value="Large" style="width:20%;height:20%">
+              <label for="control_03">
+                <h2>Large</h2>
+                <p>The pizza contains around 1500 calories and costs 100 EGP.</p>
+              </label>
+            </div>
+         
+    
+            <div>
+                <input type="radio" id="control_04" name="pizzasize" value="ExtraLarge">
+                <label for="control_04">
+                  <h2>Extra Large</h2>
+                  <p>The pizza contains around 2000 calories and costs 150 EGP.</p>
+                </label>
+              </div>
+              </section>
+    
 
 
-    <input type="radio"  name="pizzasize" value="Medium" />
-    Medium Size - 1000 calories - 80 EGP<br/>
 
 
-    <input type="radio"  name="pizzasize" value="Large"/>
-    Large Size - 1500 calories - 100 EGP<br/>
+    
 
-
-    <input type="radio"  name="pizzasize" value="ExtraLarge" />
-    Extra Large Size - 2000 calories - 150 EGP<br/>
+    </div>
  
 
 <br/>
-<legend><span class="number">2</span>Please select your preffered sauce:</legend>
+
+<div class="form-group" style="background-color:rgb(34, 33, 34); color:rgb(178, 163, 241); width:50%; margin-left:350px; opacity:50%">  
+    <h4 class="mb-5 font-weight-light">Please select your preferred sauce:</h4>
+    </div>  
+    <img src="images/sauce.png" width=25% height=25% style="margin-left:50px;">
+    <br>
+    <br>
+
+
+
    
-    <select id="sauces" name='sauces'>
+
+
+
+
+
+
+   
+    <div  class="forgot-link form-group d-flex justify-content-between align-items-center">      
+    <select id="sauces" name='sauces' class="form-control rounded-pill form-control-lg" style="width:45%;margin-left:390px;">
     <option value="None">Select sauces</option>
     <option value="Ranch">Ranch - 15 EGP</option>
     <option value="Buffalo">Buffalo - 10 EGP</option>
     <option value="Garlic">Garlic - 15 EGP</option>
     <option value="Pesto">Pesto - 10 EGP</option>
    </select>
+   </div>
+
     <br/>
  <br>
-<button type="button" onClick="getTotal()" class="btn btn-primary btn-lg">Calculate Total</button>
 
+ <img src="images/soda.png" width=30% height=30% style="margin-left: 50px;"><br><br>
+
+ <div  class="forgot-link form-group d-flex justify-content-between align-items-center">      
+    <select id="sodas" name='sodas' class="form-control rounded-pill form-control-lg" style="width:45%;margin-left:390px;">
+    <option value="NoneSoda">Select a free of charge soda drink</option>
+    <option value="Pepsi">Pepsi</option>
+    <option value="Fanta">Fanta</option>
+    <option value="SevenUp">SevenUp</option>
+    <option value="Water">Water</option>
+   </select>
+   </div>
+
+<button type="button" class=" btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase" style="background-color:rgb(136, 109, 247); width:20%; color:white; margin-left:550px;" onClick="getTotal()">Calculate Total</button>
+<br>
 <!--<input type="submit" value="Calculate Total" onClick="getTotal()">-->
 
 
-<input id="totalPrice" type="text" name="totalprice" readonly="readonly">
-    </fieldset>
+<div class="hidden" name="hiddendiv2" id="hiddendiv2">
+   
+    </div>
+
+<div class="hidden" name="hiddendiv" id="hiddendiv">
+<div class="card" name="card" id="card">
+    <div class="card-header">
+      Order Status
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Order Complete!</h5>
+      <p class="card-text">Thank you for using our services! Your order is now being processed and you can track the order once it's on its way.
+        We hope you enjoy your meal!
+      </p>
+      <a href="cart.html" class="btn btn-primary">New Order?</a>
+    </div>
+  </div>
+</div>
+
 </form>
+</div>
 
 
 
